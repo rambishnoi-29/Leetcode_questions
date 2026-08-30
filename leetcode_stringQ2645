@@ -1,0 +1,49 @@
+class Solution {
+public:
+    int addMinimum(string word) {
+       int i=0;
+       int count = 0;
+       while(i<word.length()){
+        if(word[i] == 'a'){
+            i++;
+            if(word[i]== 'b'){
+                i++;
+                if(word[i] == 'c'){
+                    i++;
+                }
+                else{
+                    count++;
+                }
+            }
+            else{
+                count++;
+                
+                if(word[i] == 'c'){
+                    i++;
+                }
+                else{
+    
+                    count++;
+                }
+            }
+        }
+        else if(word[i] == 'b'){
+            count++;
+            i++;
+            if(word[i] == 'c'){
+                i++;
+            }
+            else{
+                count++;
+            }
+        }
+        else{
+            count = count+2;
+            i++;
+
+        }
+       }
+       return count;
+    
+    }
+};
